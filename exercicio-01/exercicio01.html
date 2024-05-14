@@ -8,10 +8,20 @@
 <body>
 
     <script>
+
+      //array 
            paises = ['Albânia','Bolívia','Canadá','Dinamarca','Etiópia','Finlândia','Alemanha','Hungria','Irlanda','Japão','Quênia']
+      
+      //ciclo console log  de cada um dos paises     
            for (let i = 0; i <paises.length; i++ ){
                 console.log(paises[i]);
            }
+      //funçao devolve o número de itens do array paises
+          function mostraItens(paises) {
+            return paises.length;
+          }
+          console.log("Mostrar intens:", mostraItens(paises));
+
     </script> 
         
 </body>
