@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+//Se o desconto for menor que 10%, retorna o valor mais o desconto;
+//Se o desconto for maior que 10% mas inferior a 30%, retorna o valor menos o desconto;
+//Se o desconto for 0, retorna a multiplicação do valor por 2
+
+function mostrarDesconto (preco, desconto) {
+            if (desconto == 0){
+            return preco * 2;
+        } else if (desconto < 10) {
+            return preco + (preco * (desconto/100));
+        }else if (desconto < 30) {
+            return preco - (preco * (desconto / 100));
+        }
+
+ }
+</script>
+</body>
+</html>
