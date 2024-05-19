@@ -36,6 +36,14 @@ function retomarNome () {
 }
 retomarNome();
 
+//Cria uma função construtora relativa a um produto que tenha um nome e um valor à escolha. 
+//O nome é string e o valor um número;
+function produto (nome, valor) {
+    this.nome = nome;
+    this.valor = valor;
+}
+ const produtoNovo = new produto ("nike", 50);
+ console.log(produtoNovo);
 
     </script>
 </body>
