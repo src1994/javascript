@@ -24,6 +24,19 @@ const demasiadoRapido = function () {
 }
 
 demasiadoRapido();
+
+//- Cria uma closure que construa campos de um formulário. Na primeira função devemos passar o nome do campo, e na 
+//segunda função devemos passar o resultado. Deverá gerar algo como: Nome: Vitor
+function retomarNome () {
+    const nome = "Vitor";
+    (function() {
+        console.log("Nome: ", nome);
+    
+    })();
+}
+retomarNome();
+
+
     </script>
 </body>
 </html>
