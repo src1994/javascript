@@ -20,5 +20,6 @@ class Ecommerce {
         let setPrice = thisProduct.find(p => p.id == productId);
         setPrice.price = price;
     }
+    
 
 }
