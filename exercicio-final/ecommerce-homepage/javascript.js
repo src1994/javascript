@@ -1,6 +1,6 @@
 const apiProducts = "https://fakestoreapi.com/products";
 
-const apiEndpoint = "https://fakestoreapi.com/carts/7";
+const apiEndPoint = "https://fakestoreapi.com/carts/7";
 
 const divProductGrid = document.createElement ("div");
 document.body.append(divProductGrid)
@@ -76,7 +76,7 @@ async function fetchDisplayProducts() {
             const userId = 1; // exemplo de userId
             const date = new Date().toISOString().split('T')[0];
             const products = [{ productId: produtoId, quantity: 1 }];
-            const resposta = await fetch(apiEndpoint, {
+            const resposta = await fetch(apiEndPoint, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ userId, date, products }),
