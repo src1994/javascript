@@ -20,6 +20,14 @@ class Ecommerce {
         let setPrice = thisProduct.find(p => p.id == productId);
         setPrice.price = price;
     }
+
+    getAllProducts() {
+        return this.products;
+    }
+
+    getAllProductsNames() {
+        return this.products.map(product => product.name).join(';');
+    }
     
 
 }
