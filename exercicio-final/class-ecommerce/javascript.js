@@ -28,6 +28,14 @@ class Ecommerce {
     getAllProductsNames() {
         return this.products.map(product => product.name).join(';');
     }
-    
 
+    getProductsById(id) {
+        return this.products.find(product => product.id == id);
+    }
+
+    getProductByName(name) {
+        return this.products.find(product => product.name.toLowerCase() == name.toLowerCase()); //comparar tudo em minusculas
+    }
+
+    
 }
