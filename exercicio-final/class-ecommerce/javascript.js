@@ -11,4 +11,7 @@ class Ecommerce {
     this.products = [];
     this.cart = [];
     }
-}
+
+    addProduct(product) {
+        this.products.push(product);
+    }
