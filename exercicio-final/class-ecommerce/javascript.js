@@ -58,3 +58,26 @@ class Ecommerce {
        });*/
     }
 }
+
+// Testar exercicio
+
+const ecommerce = new Ecommerce ();
+
+const product1 = {name: "batatas", price: 1.99, id: 1};
+const product2 = {name: "cebolas", price: 2.99, id: 2};
+const product3 = {name: "bananas", price: 3.99, id: 3};
+
+ecommerce.addProduct(product1);
+ecommerce.addProduct(product2);
+ecommerce.addProduct(product3);
+
+console.log(ecommerce.getAllProducts());
+console.log(ecommerce.getAllProductsNames());
+console.log(ecommerce.getProductsById(1));
+console.log(ecommerce.getProductByName("CEBOLAS"));
+console.log(ecommerce.getProductByPrice(1,3));
+ecommerce.addProductToCart(product1);
+ecommerce.addProductToCart(product2);
+
+console.log(ecommerce.getCart());
+console.log(ecommerce.getCartTotalPrice());
