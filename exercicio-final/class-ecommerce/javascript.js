@@ -15,3 +15,10 @@ class Ecommerce {
     addProduct(product) {
         this.products.push(product);
     }
+
+    setProductPrice(productId, price) {
+        let setPrice = thisProduct.find(p => p.id == productId);
+        setPrice.price = price;
+    }
+
+}
