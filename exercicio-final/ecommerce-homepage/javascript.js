@@ -1,0 +1,1 @@
+const apiProducts = "https://fakestoreapi.com/products"
