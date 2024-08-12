@@ -37,5 +37,24 @@ class Ecommerce {
         return this.products.find(product => product.name.toLowerCase() == name.toLowerCase()); //comparar tudo em minusculas
     }
 
-    
+    getProductByPrice(initialPrice, finalPrice) {
+        return this.products.filter(product => product.price >= initialPrice && product.price <= finalPrice)
+    }
+
+    addProductToCart(product) {
+        return this.cart.push(product);
+    }
+
+    getCart() {
+        return this.cart;
+    }
+
+    getCartTotalPrice() {
+        return this.cart.reduce((accumulator, product) => accumulator + product.price, 0);
+
+       /*let sum = 0; 
+       cart.forEach(element => {
+            sum = sum + element.price;
+       });*/
+    }
 }
