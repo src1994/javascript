@@ -48,6 +48,22 @@ async function fetchDisplayProducts() {
          productCard.appendChild(h6);
          productCard.style.padding = "10px";
          productGrid.appendChild(productCard);
-         
+         createAddCartButton(productCard, product)
        });
      }
+
+     function createAddCartButton(productCard, product) {
+        const button = document.createElement("button");
+        button.className = "add-cart";
+        button.dataset.productId = product.id;
+        button.textContent = "Add to cart";
+        productCard.appendChild(button);
+        button.style.position = "absolute";
+        button.style.bottom = "10px";
+        button.style.border = "none";
+        button.style.backgroundColor = "black";
+        button.style.padding = "15px 32px";
+        button.style.color = "white";
+        button.style.cursor = "pointer";
+  
+      }
