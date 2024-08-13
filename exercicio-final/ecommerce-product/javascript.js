@@ -38,7 +38,7 @@ async function fetchDisplayProductDetails() {
 
         categoryProducts = categoryProducts.filter(p => p.id !== productId); //evitar que o produto se repita em baixo nos produtos relacionados
 
-        createProductsGrid(categoryProducts.slice(0, 3));
+        createProductsGrid(categoryProducts.slice(0, 3)); // listar primeiros 3 produtos relacionados
 
         createFooter();
 
@@ -109,4 +109,63 @@ function createProduct(product) {
     singleProduct.appendChild(imageDetails);
     singleProduct.appendChild(productsDetails);
 
+}
+
+function createProductsGrid(products) {
+    // criar grelha de produtos e append
+    const productGrid = document.createElement('div');
+    productGrid.id = 'product-grid';
+    productGrid.style.display = "flex";
+    productGrid.style.justifyContent = "center"
+    productGrid.style.gap = "10px";
+    productGrid.style.flexWrap = "wrap";
+    productGrid.style.paddingTop = "100px";
+    productGrid.style.paddingBottom = "100px";
+    document.body.append(productGrid);
+
+
+    products.forEach(product => {
+        const productCard = document.createElement("div");
+        productCard.className = "product";
+        productCard.style.position = "relative";
+        productCard.style.height = "auto";
+        productCard.style.width = "400px";
+        const img = document.createElement("img");
+        img.src = product.image;
+        img.alt = product.title;
+        img.style.width = "100%";
+        img.style.height = "200px";
+        img.style.objectFit = "scale-down";
+        const h4 = document.createElement("h4");
+        h4.style.width = "50%";
+        h4.textContent = product.title;
+        const price = document.createElement('p');
+        price.textContent = `$${product.price}`;
+
+        
+
+        productCard.appendChild(img);
+        productCard.appendChild(h4);
+        productCard.appendChild(price);
+        
+        productGrid.appendChild(productCard);
+
+       
+    });
+}
+
+function createFooter() {
+  
+    const footer = document.createElement("div");
+    footer.className = "footer-year";
+    
+    footer.style.width = "100%";
+    footer.style.height = "100px";
+    footer.style.display = "flex";
+    footer.style.justifyContent = "center";
+    footer.style.alignItems = "center";
+    footer.style.borderTop = "0.5px solid silver";
+    let = year = new Date().getFullYear();
+    footer.textContent = `Copyright ${year}`;
+    document.body.appendChild(footer);
 }
