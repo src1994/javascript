@@ -70,20 +70,25 @@ async function fetchDisplayProducts() {
         button.addEventListener('click', () => addToCart(product.id));
   
       }
-
-      async function addToCart(produtoId) {
+    
+      async function addToCart(productId) {
         try {
             const userId = 1; // exemplo de userId
             const date = new Date().toISOString().split('T')[0];
-            const products = [{ productId: produtoId, quantity: 1 }];
-            const resposta = await fetch(apiEndPoint, {
+            
+            const products = [{ productId: productId, quantity: 1 }];
+
+            const response = await fetch(apiEndPoint, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ userId, date, products }),
             });
-            const dados = await resposta.json();
-            console.log(dados);
+            const data = await response.json();
+            console.log(data);
+
+           
         } catch (erro) {
             console.error(erro);
         }
-      }
+      } 
+
